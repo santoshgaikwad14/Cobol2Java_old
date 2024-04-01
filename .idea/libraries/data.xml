@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Cobol2Java/Cobol2Java/C2J/out/production/C2J/resources/data/STATEZIP.ZIP!/" />
+      <root url="jar://$PROJECT_DIR$/Cobol2Java/Cobol2Java/C2J/out/production/C2J/resources/data/LEARN.STATE.ADDRESS.ZIP!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

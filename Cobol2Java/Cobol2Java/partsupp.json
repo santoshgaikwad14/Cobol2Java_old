@@ -1,0 +1,84 @@
+11111-22222-33333-44444Muffler       A-101231BP456xxxxxCM 003CHRTownCxxxxx2015xxxxxxxxxxxxxx23456xxxxx
+  SSubContractor  005332010010111234 West Main Order Dept.                   Any Town       AL359949999
+   21234 West Main Sched Dept.    Attn: Mary     Any Town       AL01234999931234 West Main Remit Dept.    
+      Attn: Bob      Any Town       AL359941000400000TUR00000010000022952020072520200910000002TUR0000002
+    1548202002020072520200910000003TUR00000010001023452020072820201012
+
+PARTS:{ "PART-NUMBER(23: 1-24)": "11111-22222-33333-44444",
+        "PART-NAME (14: 24-38)": "Muffler       ",
+        "SPEC-NUMBER (07: 38-45)": "A-10123",
+        "GOVT-COMML-CODE (01: 45-46)": "1",
+        "BLUEPRINT-NUMBER (10: 46-56)": "BP456xxxxx",
+        "UNIT-OF-MEASURE (03: 56-59)": "CM ",
+        "WEEKS-LEAD-TIME (03: 59-62)": "003",
+        "VEHICLE-MAKE (03: 62-65)": "CHR",
+        "VEHICLE-MODEL (10: 65-75)": "TownCxxxxx",
+        "VEHICLE-YEAR (04: 75-79)": "2015",
+        "FILLER(14: 79-93)": "xxxxxxxxxxxxxx",
+}
+
+SUPPLIERS:{"SUPPLIER-CODE (10: 93-103)": "23456xxxxx",
+            "SUPPLIER-TYPE (01: 103-104)": "S",
+            "SUPPLIER-NAME (15: 104-119)": "SubContractor  ",
+            "SUPPLIER-PERF (03: 119-122)": "005",
+            "SUPPLIER-RATING (01: 122-123)": "3",
+            "SUPPLIER-STATUS (01: 123-124)": "3",
+            "SUPPLIER-ACT-DATE (08: 124-132)": "20100101",
+}
+SUPP-ADDRESS: {
+                {
+                    "ADDRESS-TYPE (01: 132-133)": "1",
+                "ADDRESS-1 (15: 133-148)": "1234 West Main ",
+                "ADDRESS-2 (15: 148-163)": "Order Dept.    ",
+                "ADDRESS-3 (15: 163-178)": "               ",
+                "CITY (15: 178-193)": "Any Town       ",
+                "ADDR-STATE (02: 193-195)": "AL",
+                "ZIP-CODE (09: 195-204)": "359949999",
+                },
+                {
+                    "ADDRESS-TYPE (01: 204-205)": "2",
+                    "ADDRESS-1 (15: 205-220)": "1234 West Main ",
+                    "ADDRESS-2 (15: 220-235)": "Sched Dept.    ",
+                    "ADDRESS-3 (15: 235-250)": "Attn: Mary     ",
+                    "CITY (15: 250-265)": "Any Town       ",
+                    "ADDR-STATE (02: 265-267)": "AL",
+                    "ZIP-CODE (09: 267-276)": "012349999",
+                },
+                {
+                    "ADDRESS-TYPE (01: 276-277)": "3",
+                    "ADDRESS-1 (15: 277-292)": "1234 West Main ",
+                    "ADDRESS-2 (15: 292-307)": "Remit Dept.    ",
+                    "ADDRESS-3 (15: 307-322)": "Attn: Bob      ",
+                    "CITY (15: 322-337)": "Any Town       ",
+                    "ADDR-STATE (02: 337-339)": "AL",
+                    "ZIP-CODE (09: 339-448)": "359941000",
+                }
+}
+PURCHASE-ORDER:{
+    {
+        "PO-NUMBER (06: 448-454)": "400000",
+        "BUYER-CODE (03: 454-457)": "TUR",
+        "QUANTITY (07: 457-464)":"0000001",
+        "UNIT-PRICE (09: 464-473)":"000002295",
+        "ORDER-DATE (08: 473-481)":"20200725",
+        "DELIVERY-DATE (08: 481-489)":"20200910",
+    },
+    {
+        "PO-NUMBER (06: 489-495)": "000002",
+        "BUYER-CODE (03: 495-498)": "TUR",
+        "QUANTITY (07: 498-505)":"0000002",
+        "UNIT-PRICE (09: 505-514)":"154820200",
+        "ORDER-DATE (08: 514-522)":"20200725",
+        "DELIVERY-DATE (08: 522-530)":"20200910",
+    },
+    {
+        "PO-NUMBER (06: 530-536)": "000003",
+        "BUYER-CODE (03: 536-539": "TUR",
+        "QUANTITY (07: 539-546)":"0000001",
+        "UNIT-PRICE (09: 546-555)":"000102345",
+        "ORDER-DATE (08: 555-563)":"20200728",
+        "DELIVERY-DATE (08: 563-571)":"20201012",
+
+    }
+
+}
