@@ -2,15 +2,13 @@ package main;
 
 import main.dto.EditResults;
 import main.dto.PartSuppAddrPO;
+import main.parsers.FINPARTS;
+import main.parsers.FINSUPPL;
+import main.parsers.PartSuppAddrParser;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class FINAL02 {
 
@@ -59,26 +57,26 @@ public class FINAL02 {
     }
 
     private static void edit(PartSuppAddrPO partSuppAddrPO, EditResults editResults){
-        editResults.setWS_EDIT_STATUS("Y");
-        editResults.setWS_EDIT_FIELD("  ");
+        editResults.setStatus("Y");
+        editResults.setField("  ");
 
-        FINPARTS.WS_FINPARTS(partSuppAddrPO,editResults);
+        FINPARTS.WS_FINPARTS(partSuppAddrPO, editResults);
 
-        if (!editResults.isWS_PASS_EDIT_OK()) {
-            System.out.println(" - Parts Edit: FAILED, Error: " + editResults.getWS_EDIT_ERROR_MESSAGE());
-            System.out.println(" ** Invalid Value: " + editResults.getWS_EDIT_FIELD());
+        if (!editResults.isSuccessful()) {
+            System.out.println(" - Parts Edit: FAILED, Error: " + editResults.getErrorMessage());
+            System.out.println(" ** Invalid Value: " + editResults.getField());
 //            break;
         } else {
             System.out.println(" - Parts Edit: PASSED");
             }
 
-        editResults.setWS_EDIT_STATUS("Y");
+        editResults.setStatus("Y");
 
-        FINSUPPL.WS_FINSUPPL(partSuppAddrPO,editResults);
+        FINSUPPL.WS_FINSUPPL(partSuppAddrPO, editResults);
 
-        if (!editResults.isWS_PASS_EDIT_OK()) {
-            System.out.println(" - Supplies Edit: FAILED, Error: " + editResults.getWS_EDIT_ERROR_MESSAGE());
-            System.out.println(" ** Invalid Value: " + editResults.getWS_EDIT_FIELD());
+        if (!editResults.isSuccessful()) {
+            System.out.println(" - Supplies Edit: FAILED, Error: " + editResults.getErrorMessage());
+            System.out.println(" ** Invalid Value: " + editResults.getField());
 //            break;
         } else {
             System.out.println(" - Supplies Edit: PASSED");
