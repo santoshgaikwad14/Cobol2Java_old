@@ -2,7 +2,6 @@ package com.exlservice.cobol2java;
 
 import com.exlservice.cobol2java.dto.EditResults;
 import com.exlservice.cobol2java.dto.PartSuppAddrPO;
-import com.exlservice.cobol2java.dto.SuppAdd;
 import com.exlservice.cobol2java.parsers.FinParts;
 import com.exlservice.cobol2java.parsers.FinSuppl;
 import com.exlservice.cobol2java.parsers.PartSuppAddrParser;
@@ -34,9 +33,9 @@ public class FINAL02 {
 
                     EditResults editResults = new EditResults(true, EDIT_RESULT_STATUS_Y);
                     FinParts.wsFinParts(partSuppAddrPO, editResults);
-                    //System.out.println(RESULT_FORMATTING);
-                    //editResults = new EditResults(true, EDIT_RESULT_STATUS_Y);
-                    //FinSuppl.wsFinSuppl(partSuppAddrPO, editResults);
+                    System.out.println(RESULT_FORMATTING);
+                    editResults = new EditResults(true, EDIT_RESULT_STATUS_Y);
+                    FinSuppl.wsFinSuppl(partSuppAddrPO, editResults);
 
                     wsPartSuppread += 1;
 

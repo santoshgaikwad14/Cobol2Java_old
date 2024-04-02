@@ -54,9 +54,9 @@ public class FinSuppl {
             return editResults;
         }
 
-        if (isValidAddressType(SUPPLIER_STATUS,partSuppAddrPO.getSuppAddLists(),editResults)) {
+        /*if (isValidAddressType(SUPPLIER_STATUS,partSuppAddrPO.getSuppAddLists(),editResults)) {
             return editResults;
-        }
+        }*/
         return editResults;
     }
 }
