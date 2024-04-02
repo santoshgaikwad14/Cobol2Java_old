@@ -1,4 +1,4 @@
-package com.exlservice.cobol2java.parsers;
+package com.exlservice.cobol2java.validator;
 
 import com.exlservice.cobol2java.dto.EditResults;
 import com.exlservice.cobol2java.dto.PartSuppAddrPO;
@@ -12,7 +12,6 @@ public class FinSuppl {
     public static void wsFinSuppl(PartSuppAddrPO partSuppAddrPO, EditResults editResults) {
         EditResults editResult = edits(partSuppAddrPO, editResults);
         if (!editResults.isSuccessful()) {
-            System.out.println(" - Supplies Edit: FAILED, Error: " + editResults.getErrorMessage());
             System.out.println(SUPPLIES_EDIT_FAILED + editResult.getErrorMessage());
             System.out.println(INVALID_VALUE + editResult.getField());
             editResults.setStatus(WS_EDIT_STATUS_N);
@@ -34,7 +33,7 @@ public class FinSuppl {
             return editResults;
         }
 
-        if (isEmptyString(SUPPLIER_CODE,partSuppAddrPO.getSupplier().getType(), editResults)) {
+        if (isValidSupplier(SUPPLIER_TYPE,partSuppAddrPO.getSupplier().getType(), editResults)) {
             return editResults;
         }
 
@@ -42,21 +41,17 @@ public class FinSuppl {
             return editResults;
         }
 
-        if (isValidSupplier(SUPPLIER_TYPE,partSuppAddrPO.getSupplier().getType(), editResults)) {
-            return editResults;
-        }
-
         if (isValidRating(SUPPLIER_RATING ,partSuppAddrPO.getSupplier().getRating(),editResults)) {
             return editResults;
         }
 
-        if (isValidSupplierStatus(SUPPLIER_STATUS,partSuppAddrPO.getSupplier().getStatus(),editResults)) {
+        if (isValidSupplierStatus(SUPPLIER_STATUS, partSuppAddrPO.getSupplier().getStatus(), editResults)) {
             return editResults;
         }
 
-        /*if (isValidAddressType(SUPPLIER_STATUS,partSuppAddrPO.getSuppAddLists(),editResults)) {
+        if (isValidAddressType(SUPPLIER_ADDRESS, partSuppAddrPO.getSuppAddLists(), editResults)) {
             return editResults;
-        }*/
+        }
         return editResults;
     }
 }

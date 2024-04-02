@@ -27,7 +27,8 @@ public class Constants {
     public static final String SUPPLIER_PREF = "SUPPLIER-PREF";
     public static final String SUPPLIER_RATING = "SUPPLIER-RATING";
     public static final String SUPPLIER_STATUS = "SUPPLIER-STATUS";
-
+    public static final String SUPPLIER_ADDRESS = "SUPPLIER-ADDRESS";
     public static final String RESULT_FORMATTING = "###########################";
+    public static final String LINE_FORMATTING = "===========================";
 
 }

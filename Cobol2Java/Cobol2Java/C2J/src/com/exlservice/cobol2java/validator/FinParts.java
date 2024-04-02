@@ -1,11 +1,10 @@
-package com.exlservice.cobol2java.parsers;
+package com.exlservice.cobol2java.validator;
 
 import com.exlservice.cobol2java.dto.EditResults;
 import com.exlservice.cobol2java.dto.PartSuppAddrPO;
 
 import static com.exlservice.cobol2java.constants.Constants.*;
 import static com.exlservice.cobol2java.util.ValidationUtil.isEmpty;
-import static com.exlservice.cobol2java.util.ValidationUtil.checkVehicleYear;
 import static com.exlservice.cobol2java.util.ValidationUtil.checkVehicleMake;
 import static com.exlservice.cobol2java.util.ValidationUtil.isVehicleYearValid;
 import static com.exlservice.cobol2java.util.ValidationUtil.isWeeksLeadTimeValid;
@@ -38,9 +37,8 @@ public class FinParts {
         if (isEmpty(PART_NAME,partSuppAddrPO.getParts().getPartName(),editResults)) {
             return editResults;
         }
-        
-        // Equivalent of IF VEHICLE-MAKE = SPACES
-        if (isEmpty(VEHICLE_MAKE, partSuppAddrPO.getParts().getVehicleMake(),editResults)) {
+
+        if (checkVehicleMake(VEHICLE_MAKE,partSuppAddrPO.getParts().getVehicleMake(),editResults)) {
             return editResults;
         }
         
@@ -49,16 +47,6 @@ public class FinParts {
             return editResults;
         }
         
-        // Equivalent of IF VEHICLE-YEAR IS NOT NUMERIC OR VEHICLE-YEAR = 0
-        if (checkVehicleYear(VEHICLE_YEAR,partSuppAddrPO.getParts().getVehicleYear(),editResults)) {
-            return editResults;
-        }
-        
-        // Equivalent of IF NOT (CHRYSLER OR FORD OR GM OR VOLKSWAGON OR TOYOTA OR JAGUAR OR PEUGEOT OR BMW)
-        if (checkVehicleMake(VEHICLE_MAKE,partSuppAddrPO.getParts().getVehicleMake(),editResults)) {
-            return editResults;
-        }
-
         // Equivalent of IF NOT VEHICLE-YEAR-OK
         if (isVehicleYearValid(VEHICLE_YEAR,partSuppAddrPO.getParts().getVehicleYear(),editResults)) {
             return editResults;

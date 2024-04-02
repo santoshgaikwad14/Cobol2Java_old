@@ -9,6 +9,10 @@ public class SuppAdd {
     private String state;
     private int zipCode;
 
+    @Override
+    public String toString() {
+        return " SuppAdd{ type=" + type + " }";
+    }
 
     public SuppAdd(String dataLine, int i) {
         if(i == 1) {
@@ -20,21 +24,21 @@ public class SuppAdd {
             this.state = dataLine.substring(192,194);
             this.zipCode = Integer.parseInt(dataLine.substring(194,203));
         } else if(i == 2) {
-            this.type = dataLine.substring(203,204);
-            this.address1 = dataLine.substring(204,219);
-            this.address2 = dataLine.substring(219,234);
-            this.address3 = dataLine.substring(234,249);
+            this.type = dataLine.substring(204,205);
+            this.address1 = dataLine.substring(205,220);
+            this.address2 = dataLine.substring(220,235);
+            this.address3 = dataLine.substring(235,249);
             this.city = dataLine.substring(249,264);
             this.state = dataLine.substring(264,266);
             this.zipCode = Integer.parseInt(dataLine.substring(266,275));
         } else if(i == 3) {
-            this.type = dataLine.substring(275,276);
-            this.address1 = dataLine.substring(276,291);
-            this.address2 = dataLine.substring(291,306);
-            this.address3 = dataLine.substring(306,321);
-            this.city = dataLine.substring(321,336);
-            this.state = dataLine.substring(336,338);
-            this.zipCode = Integer.parseInt(dataLine.substring(338,347));
+            this.type = dataLine.substring(276,277);
+            this.address1 = dataLine.substring(277,292);
+            this.address2 = dataLine.substring(292,305);
+            this.address3 = dataLine.substring(305,319);
+            this.city = dataLine.substring(320,335);
+            this.state = dataLine.substring(335,337);
+            this.zipCode = Integer.parseInt(dataLine.substring(337,346));
         }
     }
 
