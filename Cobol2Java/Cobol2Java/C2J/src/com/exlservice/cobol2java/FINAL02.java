@@ -7,6 +7,7 @@ import com.exlservice.cobol2java.parsers.FinSuppl;
 import com.exlservice.cobol2java.parsers.PartSuppAddrParser;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -41,13 +42,12 @@ public class FINAL02 {
 
                     System.out.println(RESULT_FORMATTING);
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
-                System.out.println("Error opening file PARTSUPP, Status: " + e);
+                System.out.println("Error while processing file, Status: " + e);
             }
-
         } catch (Exception e) {
-            System.out.println("Error opening file PARTSUPP, Status: " + e);
+            System.out.println("Error while processing, Status: " + e);
         }
     }
 }
